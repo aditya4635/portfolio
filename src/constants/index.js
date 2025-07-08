@@ -62,7 +62,7 @@ export const myProjects = [
     desc: 'Ripple is a revolutionary Software-as-a-Service platform that helps you chat with people. With  multiple themes features, it allows creators to generate diverse voiceovers from a single text input.',
     subdesc:
       'Built as a unique Software-as-a-Service app with Vitejs, Tailwind CSS, Javascript and socket-io , Ripple is designed for optimal performance and scalability.',
-    href: 'https://github.com/aditya4635/Ripple',
+    href: 'https://test-k1dd.onrender.com',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/ripple.jpg',
     logoStyle: {
@@ -99,7 +99,7 @@ export const myProjects = [
     desc: 'sundown studio has a crazy site which helps us to play with html css and javascript . It is done to increase my knowledge in this subject',
     subdesc:
       '',
-    href: 'https://github.com/aditya4635/Ripple',
+    href: 'sundown-main-7vooz3pjf-adityarajbhandari1020-gmailcoms-projects.vercel.app',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/sundown-studio.png',
     logoStyle: {
