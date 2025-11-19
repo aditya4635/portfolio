@@ -36,86 +36,98 @@ const About = () => {
 
   return (
     <section className="c-space" id="about">
-      <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
-        <div className="col-span-1 xl:row-span-3">
-          <div className="grid-container">
-            <img src="assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain opacity-80" />
-
-            <div>
-              <p className="grid-headtext">Hi, I’m Aditya Raj Bhandari</p>
-              <p className="grid-subtext">
-                I have honed my skills in both frontend and backend dev, creating dynamic
-                and responsive websites.
+      <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 h-full">
+        {/* Large Profile Card - Takes 2 columns */}
+        <div className="xl:col-span-2 md:col-span-2">
+          <div className="grid-container h-full flex flex-col">
+            <div className="w-full h-[240px] flex items-center justify-center bg-gradient-to-br from-violet-500/5 to-cyan-500/5 rounded-xl mb-5">
+              <img src="assets/photo.png" alt="grid-1" className="w-auto h-full object-contain opacity-90" />
+            </div>
+            <div className="space-y-4 flex-grow">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white font-generalsans">
+                Hi, I'm Aditya Raj Bhandari
+              </h2>
+              <p className="text-base text-gray-700 dark:text-white-600 leading-relaxed">
+                Full-stack developer specializing in creating dynamic and responsive websites that deliver exceptional user experiences.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="col-span-1 xl:row-span-3">
-          <div className="grid-container">
-            <img src="assets/grid2.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain opacity-80" />
-
-            <div>
-              <p className="grid-headtext">Tech Stack</p>
-              <p className="grid-subtext">
-                I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable
-                applications
-              </p>
+        {/* Tech Stack Card - Square shape */}
+        <div className="xl:col-span-1 md:col-span-1">
+          <div className="grid-container h-full flex flex-col">
+            <div className="flex-grow flex items-center justify-center mb-4">
+              <img src="assets/grid2.png" alt="grid-2" className="w-full h-[160px] object-contain opacity-80" />
             </div>
-          </div>
-        </div>
-
-        <div className="col-span-1 xl:row-span-4">
-          <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-              {/* <Globe
-                height={326}
-                width={326}
-                backgroundColor="rgba(0, 0, 0, 0)"
-                backgroundImageOpacity={0.5}
-                showAtmosphere
-                showGraticules
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                labelsData={[{ lat: 28.6139, lng: 77.2090, text: 'Delhi, India', color: 'white', size: 15 }]}
-              /> */}
-            </div>
-            <div>
-              <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-              <p className="grid-subtext">I&apos;m based in Delhi, India and open to remote work worldwide.</p>
-              <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
-            </div>
-          </div>
-        </div>
-
-        <div className="xl:col-span-2 xl:row-span-3">
-          <div className="grid-container">
-            <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain opacity-80" />
-
-            <div>
-              <p className="grid-headtext">My Passion for Coding</p>
-              <p className="grid-subtext">
-                I love solving problems and building things through code. Programming isn&apos;t just my
-                profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="xl:col-span-1 xl:row-span-2">
-          <div className="grid-container">
-            <img
-              src="assets/grid4.png"
-              alt="grid-4"
-              className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top opacity-80"
-            />
-
             <div className="space-y-2">
-              <p className="grid-subtext text-center">Contact me</p>
-              <div className="copy-container group" onClick={handleCopy}>
-                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" className="transition-transform group-hover:scale-110" />
-                <p className="lg:text-lg md:text-xl font-medium text-white group-hover:text-violet-500 transition-colors">adityarajbhandari1020@gmail.com</p>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white font-generalsans">Tech Stack</h3>
+              <p className="text-sm text-gray-700 dark:text-white-600 leading-relaxed">
+                Modern frameworks & cutting-edge tools
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Email Card - Compact */}
+        <div className="xl:col-span-1 md:col-span-1">
+          <div className="grid-container h-full flex flex-col justify-between">
+            <div className="flex-grow flex items-center justify-center mb-4">
+              <img
+                src="assets/grid4.png"
+                alt="grid-4"
+                className="w-full h-[120px] object-cover rounded-xl opacity-80"
+              />
+            </div>
+            <div className="space-y-3">
+              <p className="text-sm font-medium text-gray-700 dark:text-white-600 text-center">Get in touch</p>
+              <div className="flex flex-col items-center gap-2 cursor-pointer group" onClick={handleCopy}>
+                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" className="transition-transform group-hover:scale-110 w-5 h-5" />
+                <p className="text-xs font-medium text-gray-600 dark:text-white group-hover:text-violet-500 transition-colors text-center break-all px-2">
+                  adityarajbhandari1020@gmail.com
+                </p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Passion Card - Wide horizontal */}
+        <div className="xl:col-span-3 md:col-span-2">
+          <div className="grid-container py-6 px-8">
+            <div className="flex md:flex-row flex-col gap-6 items-center">
+              <div className="md:w-2/5 w-full flex items-center justify-center">
+                <div className="rounded-2xl w-full h-[180px] flex justify-center items-center bg-gradient-to-br from-violet-500/10 to-cyan-500/10">
+                  <div className="text-7xl">🌍</div>
+                </div>
+              </div>
+              <div className="md:w-3/5 w-full space-y-3">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white font-generalsans">
+                  Flexible & Remote
+                </h3>
+                <p className="text-base text-gray-700 dark:text-white-600 leading-relaxed">
+                  Based in Delhi, India. Open to remote work opportunities worldwide.
+                </p>
+                <a href="#contact" className="inline-block">
+                  <Button name="Contact Me" isBeam containerClass="mt-2" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Location/Remote Work Card - Tall vertical */}
+        <div className="xl:col-span-1 md:col-span-2">
+          <div className="grid-container h-full flex flex-col justify-between">
+            <div className="flex-grow flex items-center justify-center mb-5">
+              <img src="assets/grid3.png" alt="grid-3" className="w-full h-[220px] object-contain opacity-80" />
+            </div>
+            <div className="space-y-3">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white font-generalsans">
+                My Passion for Coding
+              </h3>
+              <p className="text-sm text-gray-700 dark:text-white-600 leading-relaxed">
+                I love solving problems and building things through code. Programming isn&apos;t just my profession—it&apos;s my passion.
+              </p>
             </div>
           </div>
         </div>

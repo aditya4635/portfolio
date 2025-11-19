@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="c-space pt-7 pb-3 border-t border-white-800/10 flex justify-between items-center flex-wrap gap-5 backdrop-blur-xl bg-black-200/30">
-      <div className="text-white-500 flex gap-2">
+    <footer className="c-space pt-7 pb-3 border-t border-black-300/20 dark:border-white-800/10 flex justify-between items-center flex-wrap gap-5 backdrop-blur-xl bg-white/30 dark:bg-black-200/30">
+      <div className="text-gray-600 dark:text-white-500 flex gap-2">
         <p>Terms & Conditions</p>
         <p>|</p>
         <p>Privacy Policy</p>
@@ -12,14 +12,14 @@ const Footer = () => {
           <img src="/assets/github.svg" alt="github" className="w-1/2 h-1/2" />
         </a>
         <a href="https://www.linkedin.com/in/aditya-raj-bhandari/" target="_blank" rel="noopener noreferrer" className="social-icon">
-          <img src="/assets/linkedin.svg" alt="linkedin" className="w-1/2 h-1/2 invert" />
+          <img src="/assets/linkedin.svg" alt="linkedin" className="w-1/2 h-1/2 invert-0 dark:invert" />
         </a>
         <a href="https://www.instagram.com/_aditttttya/" target="_blank" rel="noopener noreferrer" className="social-icon">
           <img src="/assets/instagram.svg" alt="instagram" className="w-1/2 h-1/2" />
         </a>
       </div>
 
-      <p className="text-white-500">© 2024 Aditya Raj Bhandari. All rights reserved.</p>
+      <p className="text-gray-600 dark:text-white-500">© 2024 Aditya Raj Bhandari. Licensed under MIT License.</p>
     </footer>
   );
 };

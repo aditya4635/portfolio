@@ -54,7 +54,7 @@ const Hero = () => {
       {/* Text Content Overlay */}
       <div className="w-full h-full flex flex-col justify-center items-start c-space gap-8 z-10 relative px-5 sm:px-10 pt-32 md:pt-0 min-h-screen pointer-events-none">
         <div className="pointer-events-auto">
-          <p className="hero-text sm:text-6xl text-4xl font-bold text-white font-generalsans text-left tracking-tight">
+          <p className="hero-text sm:text-6xl text-4xl font-bold !text-black dark:!text-white font-generalsans text-left tracking-tight">
             Hi, I am Aditya <span className="waving-hand">👋</span>
           </p>
           <p className="hero-text text-xl md:text-2xl text-gray_gradient text-left font-medium mt-2">

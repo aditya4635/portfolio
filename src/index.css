@@ -14,10 +14,15 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: #050505;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+  @apply text-black;
   font-family: 'General Sans', sans-serif;
-  color: #ffffff;
   scroll-padding-top: 7rem; /* Offset for fixed navbar */
+}
+
+html.dark, html.dark body {
+  background: linear-gradient(135deg, #050505 0%, #0a0a0a 100%);
+  @apply text-white;
 }
 
 @layer utilities {
@@ -26,7 +31,7 @@ html, body {
   }
 
   .head-text {
-    @apply sm:text-4xl text-3xl font-semibold text-white;
+    @apply sm:text-4xl text-3xl font-semibold text-black dark:text-white;
   }
 
   .nav-ul {
@@ -34,7 +39,7 @@ html, body {
   }
 
   .nav-li {
-    @apply text-white-500 hover:text-white font-generalsans max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5 transition-colors duration-300;
+    @apply text-gray-600 dark:text-white-500 hover:text-black dark:hover:text-white font-generalsans max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5 transition-colors duration-300;
   }
 
   .nav-li_a {
@@ -42,11 +47,11 @@ html, body {
   }
 
   .nav-sidebar {
-    @apply absolute left-0 right-0 bg-black-200 backdrop-blur-lg transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block border-b border-white-800/10;
+    @apply absolute left-0 right-0 bg-white dark:bg-black-200 backdrop-blur-lg transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block border-b border-black-300/20 dark:border-white-800/10;
   }
 
   .text-gray_gradient {
-    @apply bg-gradient-to-r from-[#BEC1CF] from-60% via-[#D5D8EA] via-60% to-[#D5D8EA] to-100% bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-black from-30% via-gray-500 via-60% to-gray-400 to-100% dark:from-[#BEC1CF] dark:from-60% dark:via-[#D5D8EA] dark:via-60% dark:to-[#D5D8EA] dark:to-100% bg-clip-text text-transparent;
   }
 
   .text-violet_gradient {
@@ -77,15 +82,15 @@ html, body {
 
   /* about section */
   .grid-container {
-    @apply w-full h-full border border-white-800/10 bg-black-200/50 backdrop-blur-sm rounded-xl sm:p-7 p-4 flex flex-col gap-5 hover:border-violet-500/30 transition-colors duration-500;
+    @apply w-full h-full bg-white/80 dark:bg-black-200/50 backdrop-blur-md rounded-xl sm:p-7 p-4 flex flex-col gap-5 hover:border-violet-500/50 transition-colors duration-500 shadow-sm hover:shadow-md;
   }
 
   .grid-headtext {
-    @apply text-xl font-semibold mb-2 text-white font-generalsans;
+    @apply text-xl font-semibold mb-2 text-gray-900 dark:text-white font-generalsans;
   }
 
   .grid-subtext {
-    @apply text-white-600 text-base font-generalsans;
+    @apply text-gray-700 dark:text-white-600 text-base font-generalsans;
   }
 
   .copy-container {
@@ -94,11 +99,11 @@ html, body {
 
   /* projects section  */
   .arrow-btn {
-    @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full bg-black-200 hover:bg-black-300 border border-white-800/10;
+    @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full bg-black-100 dark:bg-black-200 hover:bg-black-200 dark:hover:bg-black-300 border border-black-300/20 dark:border-white-800/10;
   }
 
   .tech-logo {
-    @apply w-10 h-10 rounded-md p-2 bg-black-300 border border-white-800/10 flex justify-center items-center;
+    @apply w-10 h-10 rounded-md p-2 bg-neutral-100 dark:bg-black-300 border border-black-300/20 dark:border-white-800/10 flex justify-center items-center;
   }
 
   /* clients section */
@@ -107,7 +112,7 @@ html, body {
   }
 
   .client-review {
-    @apply rounded-xl md:p-10 p-5 col-span-1 bg-black-200/50 border border-white-800/10 backdrop-blur-sm;
+    @apply rounded-xl md:p-10 p-5 col-span-1 bg-white/80 dark:bg-black-200/50 border border-gray-300/40 dark:border-white-800/10 backdrop-blur-md shadow-sm;
   }
 
   .client-content {
@@ -120,23 +125,23 @@ html, body {
   }
 
   .work-canvas {
-    @apply col-span-1 rounded-xl bg-black-200/50 border border-white-800/10 overflow-hidden;
+    @apply col-span-1 rounded-xl bg-neutral-100/50 dark:bg-black-200/50 border border-black-300/20 dark:border-white-800/10 overflow-hidden;
   }
 
   .work-content {
-    @apply col-span-2 rounded-xl bg-black-200/50 border border-white-800/10;
+    @apply col-span-2 rounded-xl bg-white/80 dark:bg-black-200/50 border border-gray-300/40 dark:border-white-800/10 shadow-sm;
   }
 
   .work-content_container {
-    @apply grid grid-cols-[auto_1fr] items-start gap-5  transition-all ease-in-out duration-500 cursor-pointer hover:bg-black-300 rounded-lg sm:px-5 px-2.5;
+    @apply grid grid-cols-[auto_1fr] items-start gap-5  transition-all ease-in-out duration-500 cursor-pointer hover:bg-neutral-100 dark:hover:bg-black-300 rounded-lg sm:px-5 px-2.5;
   }
 
   .work-content_logo {
-    @apply rounded-3xl w-16 h-16 p-2 bg-black-600 border border-white-800/10;
+    @apply rounded-3xl w-16 h-16 p-2 bg-neutral-200 dark:bg-black-600 border border-black-300/20 dark:border-white-800/10;
   }
 
   .work-content_bar {
-    @apply flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-violet-500 group-last:hidden;
+    @apply flex-1 w-0.5 mt-4 h-full bg-neutral-300 dark:bg-black-300 group-hover:bg-violet-500 group-last:hidden;
   }
 
   /* contact section */
@@ -145,11 +150,11 @@ html, body {
   }
 
   .field-label {
-    @apply text-lg text-white-600;
+    @apply text-lg text-gray-700 dark:text-white-600;
   }
 
   .field-input {
-    @apply w-full bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white shadow-none focus:outline-none focus:ring-2 focus:ring-violet-500/50 border border-white-800/10;
+    @apply w-full bg-neutral-100 dark:bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-gray-500 dark:placeholder:text-white-500 text-lg text-black dark:text-white shadow-none focus:outline-none focus:ring-2 focus:ring-violet-500/50 border border-black-300/20 dark:border-white-800/10;
   }
 
   .field-btn {
@@ -162,7 +167,7 @@ html, body {
 
   /*  footer */
   .social-icon {
-    @apply w-12 h-12 rounded-full flex justify-center items-center bg-black-300 border border-white-800/10 hover:bg-black-500 transition-colors;
+    @apply w-12 h-12 rounded-full flex justify-center items-center bg-neutral-100 dark:bg-black-300 border border-black-300/20 dark:border-white-800/10 hover:bg-neutral-200 dark:hover:bg-black-500 transition-colors;
   }
 }
 

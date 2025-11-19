@@ -6,13 +6,13 @@ export const navLinks = [
   },
   {
     id: 2,
-    name: 'About',
-    href: '#about',
+    name: 'Work',
+    href: '#work',
   },
   {
     id: 3,
-    name: 'Work',
-    href: '#work',
+    name: 'About',
+    href: '#about',
   },
   {
     id: 4,
@@ -99,7 +99,7 @@ export const myProjects = [
     desc: 'sundown studio has a crazy site which helps us to play with html css and javascript . It is done to increase my knowledge in this subject',
     subdesc:
       '',
-    href: 'sundown-main-7vooz3pjf-adityarajbhandari1020-gmailcoms-projects.vercel.app',
+    href: 'https://sundown-main-alpha.vercel.app',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/sundown-studio.png',
     logoStyle: {

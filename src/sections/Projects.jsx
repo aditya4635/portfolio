@@ -29,7 +29,7 @@ const Projects = () => {
         {myProjects.map((project, index) => (
           <div 
             key={index} 
-            className="bg-black-200/50 backdrop-blur-xl rounded-2xl border border-white-800/10 p-5 shadow-2xl hover:shadow-violet-500/10 transition-all duration-300 group flex flex-col justify-between"
+            className="bg-white/90 dark:bg-black-200/50 backdrop-blur-xl rounded-2xl border border-gray-300/50 dark:border-white-800/10 p-5 shadow-lg hover:shadow-xl hover:shadow-violet-500/20 transition-all duration-300 group flex flex-col justify-between"
           >
             <div className="relative w-full h-48 overflow-hidden rounded-xl mb-5">
               <img 
@@ -43,31 +43,31 @@ const Projects = () => {
             </div>
 
             <div className="flex flex-col gap-3 flex-grow">
-              <h3 className="text-white text-xl font-semibold group-hover:text-violet-500 transition-colors">
+              <h3 className="text-black dark:text-white text-xl font-semibold group-hover:text-violet-500 transition-colors">
                 {project.title}
               </h3>
-              <p className="text-white-500 text-sm line-clamp-3">
+              <p className="text-gray-600 dark:text-white-500 text-sm line-clamp-3">
                 {project.desc}
               </p>
               
               <div className="flex items-center gap-3 mt-2">
                 {project.tags.map((tag, i) => (
-                  <div key={i} className="w-8 h-8 rounded-md p-1.5 bg-black-300 border border-white-800/10 flex justify-center items-center" title={tag.name}>
+                  <div key={i} className="w-8 h-8 rounded-md p-1.5 bg-neutral-100 dark:bg-black-300 border border-black-300/20 dark:border-white-800/10 flex justify-center items-center" title={tag.name}>
                     <img src={tag.path} alt={tag.name} className="w-full h-full object-contain" />
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mt-5 pt-5 border-t border-white-800/10">
+            <div className="mt-5 pt-5 border-t border-black-300/20 dark:border-white-800/10">
               <a
-                className="flex items-center justify-between cursor-pointer text-white-500 hover:text-cyan-500 transition-colors w-full"
+                className="flex items-center justify-between cursor-pointer text-gray-600 dark:text-white-500 hover:text-cyan-500 transition-colors w-full"
                 href={project.href}
                 target="_blank"
                 rel="noreferrer"
               >
                 <span className="font-medium">Check Live Site</span>
-                <img src="/assets/arrow-up.png" alt="arrow" className="w-4 h-4 invert" />
+                <img src="/assets/arrow-up.png" alt="arrow" className="w-4 h-4 invert-0 dark:invert" />
               </a>
             </div>
           </div>

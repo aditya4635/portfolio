@@ -103,9 +103,9 @@ const Contact = () => {
       {alert.show && <Alert {...alert} />}
 
       <div className="relative min-h-screen flex items-center justify-center flex-col">
-        <div className="contact-container pt-10 pb-10 px-8 bg-black-200/50 backdrop-blur-xl border border-white-800/10 rounded-2xl shadow-2xl shadow-black-200 w-full max-w-xl">
+        <div className="contact-container pt-10 pb-10 px-8 bg-white/90 dark:bg-black-200/50 backdrop-blur-xl border border-gray-300/50 dark:border-white-800/10 rounded-2xl shadow-xl shadow-gray-300/50 dark:shadow-black-200 w-full max-w-xl">
           <h3 className="head-text">Let&apos;s talk</h3>
-          <p className="text-lg text-white-600 mt-3">
+          <p className="text-lg text-gray-600 dark:text-white-600 mt-3">
             Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
             life, I’m here to help.
           </p>
@@ -120,7 +120,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="field-input"
-                placeholder="John Doe"
+                placeholder="ex., Your Name"
               />
             </label>
 
@@ -133,7 +133,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="field-input"
-                placeholder="johndoe@gmail.com"
+                placeholder="ex., youremail@gmail.com"
               />
             </label>
 
