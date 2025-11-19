@@ -1,6 +1,7 @@
-import { useState } from 'react';
-
+import { useState, useEffect, useRef } from 'react';
 import { navLinks } from '../constants/index.js';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const NavItems = ({ onClick = () => {} }) => (
   <ul className="nav-ul">
@@ -16,16 +17,21 @@ const NavItems = ({ onClick = () => {} }) => (
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const headerRef = useRef(null);
+  const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center py-5 mx-auto c-space">
-          <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">
+    <header 
+      ref={headerRef}
+      className="fixed top-4 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4 mx-auto c-space bg-black-200/80 backdrop-blur-md border border-white-800/10 rounded-2xl shadow-lg shadow-violet-500/10">
+          <a href="/" className="text-white font-bold text-xl hover:text-violet-500 transition-colors flex items-center gap-2">
+            <span className="text-violet-500 text-2xl">&lt;</span>
             Aditya
+            <span className="text-cyan-500 text-2xl">/&gt;</span>
           </a>
 
           <button
@@ -41,8 +47,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={`nav-sidebar ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
-        <nav className="p-5">
+      <div className={`nav-sidebar ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} transition-all duration-500 ease-in-out overflow-hidden`}>
+        <nav className="p-5 bg-black-200/90 backdrop-blur-lg border-b border-white-800/10">
           <NavItems onClick={closeMenu} />
         </nav>
       </div>

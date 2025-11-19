@@ -1,13 +1,18 @@
 import { useState } from 'react';
 import Globe from 'react-globe.gl';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Button from '../components/Button.jsx';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(' adrian@jsmastery.pro');
+    navigator.clipboard.writeText('adityarajbhandari1020@gmail.com');
     setHasCopied(true);
 
     setTimeout(() => {
@@ -15,12 +20,26 @@ const About = () => {
     }, 2000);
   };
 
+  useGSAP(() => {
+    gsap.from('.grid-container', {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '#about',
+        start: 'top 80%',
+      },
+    });
+  });
+
   return (
-    <section className="c-space my-20" id="about">
+    <section className="c-space" id="about">
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" />
+            <img src="assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain opacity-80" />
 
             <div>
               <p className="grid-headtext">Hi, I’m Aditya Raj Bhandari</p>
@@ -34,7 +53,7 @@ const About = () => {
 
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid2.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" />
+            <img src="assets/grid2.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain opacity-80" />
 
             <div>
               <p className="grid-headtext">Tech Stack</p>
@@ -49,7 +68,7 @@ const About = () => {
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
             <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-              <Globe
+              {/* <Globe
                 height={326}
                 width={326}
                 backgroundColor="rgba(0, 0, 0, 0)"
@@ -58,12 +77,12 @@ const About = () => {
                 showGraticules
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                labelsData={[{ lat: 40, lng: -100, text: 'Rjieka, Croatia', color: 'white', size: 15 }]}
-              />
+                labelsData={[{ lat: 28.6139, lng: 77.2090, text: 'Delhi, India', color: 'white', size: 15 }]}
+              /> */}
             </div>
             <div>
               <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-              <p className="grid-subtext">I&apos;m based in Delhi ,India and open to remote work worldwide.</p>
+              <p className="grid-subtext">I&apos;m based in Delhi, India and open to remote work worldwide.</p>
               <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
             </div>
           </div>
@@ -71,7 +90,7 @@ const About = () => {
 
         <div className="xl:col-span-2 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
+            <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain opacity-80" />
 
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
@@ -88,14 +107,14 @@ const About = () => {
             <img
               src="assets/grid4.png"
               alt="grid-4"
-              className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
+              className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top opacity-80"
             />
 
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact me</p>
-              <div className="copy-container" onClick={handleCopy}>
-                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
-                <p className="lg:text-lg md:text-xl font-medium text-gray_gradient text-white">adityarajbhandari1020@gmail.com</p>
+              <div className="copy-container group" onClick={handleCopy}>
+                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" className="transition-transform group-hover:scale-110" />
+                <p className="lg:text-lg md:text-xl font-medium text-white group-hover:text-violet-500 transition-colors">adityarajbhandari1020@gmail.com</p>
               </div>
             </div>
           </div>

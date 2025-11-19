@@ -14,11 +14,12 @@ const App = () => {
       <Hero />
       
       <Projects />
-      <About />
       
+      <div className="space-y-32 pb-20 mt-32"> {/* Increased spacing for About and Contact */}
+        <About />
+        <Contact />
+      </div>
       
-      
-      <Contact />
       <Footer />
     </main>
   );

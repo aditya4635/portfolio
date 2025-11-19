@@ -2,63 +2,73 @@ import { Leva } from 'leva';
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useMediaQuery } from 'react-responsive';
-import { PerspectiveCamera } from '@react-three/drei';
+import { PerspectiveCamera, OrbitControls } from '@react-three/drei';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
-import Cube from '../components/Cube.jsx';
-import Rings from '../components/Rings.jsx';
-import ReactLogo from '../components/ReactLogo.jsx';
-import Button from '../components/Button.jsx';
-import Target from '../components/Target.jsx';
 import CanvasLoader from '../components/Loading.jsx';
-import HeroCamera from '../components/HeroCamera.jsx';
+import HeroGeometry from '../components/HeroGeometry.jsx';
 import { calculateSizes } from '../constants/index.js';
-import { HackerRoom } from '../components/HackerRoom.jsx';
 
 const Hero = () => {
-  // Use media queries to determine screen size
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
+  useGSAP(() => {
+    gsap.fromTo('.hero-text', {
+      opacity: 0,
+      y: 20
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power2.out'
+    });
+  });
+
   return (
     <section className="min-h-screen w-full flex flex-col relative" id="home">
-      <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
-        <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
-          Hi, I am Aditya <span className="waving-hand">👋</span>
-        </p>
-        <p className="hero_tag text-gray_gradient">Building Products & Brands</p>
-      </div>
-
+      {/* 3D Model Background */}
       <div className="w-full h-full absolute inset-0">
         <Canvas className="w-full h-full">
           <Suspense fallback={<CanvasLoader />}>
-            {/* To hide controller */}
             <Leva hidden />
-            <PerspectiveCamera makeDefault position={[0, 0, 30]} />
+            <PerspectiveCamera makeDefault position={[0, 0, 20]} />
 
-            <HeroCamera isMobile={isMobile}>
-              <HackerRoom scale={sizes.deskScale} position={sizes.deskPosition} rotation={[0.1, -Math.PI, 0]} />
-            </HeroCamera>
+            <HeroGeometry scale={isMobile ? 2 : 3} position={isMobile ? [0, 0, 0] : [4, 0, 0]} />
 
-            <group>
-              <Target position={sizes.targetPosition} />
-              <ReactLogo position={sizes.reactLogoPosition} />
-              <Rings position={sizes.ringPosition} />
-              <Cube position={sizes.cubePosition} />
-            </group>
-
-            <ambientLight intensity={1} />
-            <directionalLight position={[10, 10, 10]} intensity={0.5} />
+            <ambientLight intensity={1.5} />
+            <directionalLight position={[10, 10, 10]} intensity={1.5} />
+            <pointLight position={[-10, -10, -10]} intensity={2} color="#7c3aed" />
+            <pointLight position={[10, 10, 10]} intensity={2} color="#06b6d4" />
+            
+            <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} />
           </Suspense>
         </Canvas>
       </div>
 
-      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
-        <a href="#about" className="w-fit">
-          <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
-        </a>
+      {/* Text Content Overlay */}
+      <div className="w-full h-full flex flex-col justify-center items-start c-space gap-8 z-10 relative px-5 sm:px-10 pt-32 md:pt-0 min-h-screen pointer-events-none">
+        <div className="pointer-events-auto">
+          <p className="hero-text sm:text-6xl text-4xl font-bold text-white font-generalsans text-left tracking-tight">
+            Hi, I am Aditya <span className="waving-hand">👋</span>
+          </p>
+          <p className="hero-text text-xl md:text-2xl text-gray_gradient text-left font-medium mt-2">
+            Building Products & Brands
+          </p>
+          
+          <div className="w-full mt-8">
+            <a href="#about" className="w-fit">
+              <button className="btn btn-primary sm:w-fit w-full sm:min-w-96 text-lg font-semibold">
+                Let's work together
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
