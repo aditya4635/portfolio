@@ -32,14 +32,13 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen w-full flex flex-col relative" id="home">
-      {/* 3D Model Background */}
       <div className="w-full h-full absolute inset-0">
         <Canvas className="w-full h-full">
           <Suspense fallback={<CanvasLoader />}>
             <Leva hidden />
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
 
-            <HeroGeometry scale={isMobile ? 2 : 3} position={isMobile ? [0, 0, 0] : [4, 0, 0]} />
+            <HeroGeometry scale={isSmall ? 1.5 : isMobile ? 2 : 3} position={isSmall ? [0, 0, 0] : isMobile ? [0, 0, 0] : [4, 0, 0]} />
 
             <ambientLight intensity={1.5} />
             <directionalLight position={[10, 10, 10]} intensity={1.5} />
@@ -51,19 +50,18 @@ const Hero = () => {
         </Canvas>
       </div>
 
-      {/* Text Content Overlay */}
-      <div className="w-full h-full flex flex-col justify-center items-start c-space gap-8 z-10 relative px-5 sm:px-10 pt-32 md:pt-0 min-h-screen pointer-events-none">
+      <div className="w-full h-full flex flex-col justify-center items-start c-space gap-6 sm:gap-8 z-10 relative px-5 sm:px-10 pt-40 sm:pt-32 md:pt-0 min-h-screen pointer-events-none">
         <div className="pointer-events-auto">
-          <p className="hero-text sm:text-6xl text-4xl font-bold !text-black dark:!text-white font-generalsans text-left tracking-tight">
-            Hi, I am Aditya <span className="waving-hand">👋</span>
+          <p className="hero-text text-3xl sm:text-5xl md:text-6xl font-bold !text-black dark:!text-white font-generalsans text-left tracking-tight">
+            Hi, I am Aditya
           </p>
-          <p className="hero-text text-xl md:text-2xl text-gray_gradient text-left font-medium mt-2">
+          <p className="hero-text text-lg sm:text-xl md:text-2xl text-gray_gradient text-left font-medium mt-2">
             Building Products & Brands
           </p>
           
           <div className="w-full mt-8">
             <a href="#about" className="w-fit">
-              <button className="btn btn-primary sm:w-fit w-full sm:min-w-96 text-lg font-semibold">
+              <button className="btn btn-primary sm:w-fit w-full sm:min-w-96 text-base sm:text-lg font-semibold min-h-[48px]">
                 Let's work together
               </button>
             </a>

@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="c-space pt-7 pb-3 border-t border-black-300/20 dark:border-white-800/10 flex justify-between items-center flex-wrap gap-5 backdrop-blur-xl bg-white/30 dark:bg-black-200/30">
-      <div className="text-gray-600 dark:text-white-500 flex gap-2">
+    <footer className="c-space pt-7 pb-3 border-t border-black-300/20 dark:border-white-800/10 flex justify-center sm:justify-between items-center flex-wrap gap-3 sm:gap-5 backdrop-blur-xl bg-white/30 dark:bg-black-200/30">
+      <div className="text-gray-600 dark:text-white-500 flex gap-2 text-sm sm:text-base">
         <p>Terms & Conditions</p>
         <p>|</p>
         <p>Privacy Policy</p>
@@ -19,7 +19,7 @@ const Footer = () => {
         </a>
       </div>
 
-      <p className="text-gray-600 dark:text-white-500">© 2024 Aditya Raj Bhandari. Licensed under MIT License.</p>
+      <p className="text-gray-600 dark:text-white-500 text-sm sm:text-base text-center w-full sm:w-auto">© 2024 Aditya Raj Bhandari. Licensed under MIT License.</p>
     </footer>
   );
 };

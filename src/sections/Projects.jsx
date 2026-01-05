@@ -31,11 +31,11 @@ const Projects = () => {
             key={index} 
             className="bg-white/90 dark:bg-black-200/50 backdrop-blur-xl rounded-2xl border border-gray-300/50 dark:border-white-800/10 p-5 shadow-lg hover:shadow-xl hover:shadow-violet-500/20 transition-all duration-300 group flex flex-col justify-between"
           >
-            <div className="relative w-full h-48 overflow-hidden rounded-xl mb-5">
+            <div className="relative w-full aspect-[16/9] overflow-hidden rounded-xl mb-5">
               <img 
                 src={project.spotlight} 
                 alt={project.title} 
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" 
+                className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" 
               />
               <div className="absolute top-2 right-2 p-2 bg-black/50 backdrop-blur-md rounded-lg border border-white/10">
                  <img src={project.logo} alt="logo" className="w-6 h-6" />

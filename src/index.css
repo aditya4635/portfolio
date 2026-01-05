@@ -82,7 +82,7 @@ html.dark, html.dark body {
 
   /* about section */
   .grid-container {
-    @apply w-full h-full bg-white/80 dark:bg-black-200/50 backdrop-blur-md rounded-xl sm:p-7 p-4 flex flex-col gap-5 hover:border-violet-500/50 transition-colors duration-500 shadow-sm hover:shadow-md;
+    @apply w-full h-full bg-white/80 dark:bg-black-200/50 backdrop-blur-md rounded-xl p-4 sm:p-6 md:p-7 flex flex-col gap-4 sm:gap-5 hover:border-violet-500/50 transition-colors duration-500 shadow-sm hover:shadow-md border border-transparent;
   }
 
   .grid-headtext {

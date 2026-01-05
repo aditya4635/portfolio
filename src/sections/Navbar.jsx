@@ -65,7 +65,6 @@ const Navbar = () => {
           </a>
 
           <div className="flex items-center gap-3">
-            {/* LeetCode Button - Desktop */}
             <a
               href="https://leetcode.com/u/adityarajbhandari1020/"
               target="_blank"
@@ -75,7 +74,6 @@ const Navbar = () => {
               <span>LeetCode</span>
             </a>
 
-            {/* Resume Button - Desktop */}
             <a
               href="/assets/NSUT_TnP_Resume (5).pdf"
               download="Aditya_Raj_Bhandari_Resume.pdf"
@@ -87,7 +85,6 @@ const Navbar = () => {
               <span>Resume</span>
             </a>
 
-            {/* GitHub Button - Desktop */}
             <a
               href="https://github.com/aditya4635"
               target="_blank"

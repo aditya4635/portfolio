@@ -37,11 +37,10 @@ const About = () => {
   return (
     <section className="c-space" id="about">
       <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 h-full">
-        {/* Large Profile Card - Takes 2 columns */}
         <div className="xl:col-span-2 md:col-span-2">
           <div className="grid-container h-full flex flex-col">
-            <div className="w-full h-[240px] flex items-center justify-center bg-gradient-to-br from-violet-500/5 to-cyan-500/5 rounded-xl mb-5">
-              <img src="assets/photo.png" alt="grid-1" className="w-auto h-full object-contain opacity-90" />
+            <div className="w-full min-h-[180px] sm:h-[240px] max-h-[280px] flex items-center justify-center bg-gradient-to-br from-violet-500/5 to-cyan-500/5 rounded-xl mb-5">
+              <img src="assets/photo.png" alt="grid-1" className="w-auto h-full max-h-full object-contain opacity-90" />
             </div>
             <div className="space-y-4 flex-grow">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white font-generalsans">
@@ -54,11 +53,10 @@ const About = () => {
           </div>
         </div>
 
-        {/* Tech Stack Card - Square shape */}
         <div className="xl:col-span-1 md:col-span-1">
           <div className="grid-container h-full flex flex-col">
             <div className="flex-grow flex items-center justify-center mb-4">
-              <img src="assets/grid2.png" alt="grid-2" className="w-full h-[160px] object-contain opacity-80" />
+              <img src="assets/grid2.png" alt="grid-2" className="w-full h-auto max-h-[120px] sm:max-h-[160px] object-contain opacity-80" />
             </div>
             <div className="space-y-2">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white font-generalsans">Tech Stack</h3>
@@ -69,14 +67,13 @@ const About = () => {
           </div>
         </div>
 
-        {/* Contact Email Card - Compact */}
         <div className="xl:col-span-1 md:col-span-1">
           <div className="grid-container h-full flex flex-col justify-between">
             <div className="flex-grow flex items-center justify-center mb-4">
               <img
                 src="assets/grid4.png"
                 alt="grid-4"
-                className="w-full h-[120px] object-cover rounded-xl opacity-80"
+                className="w-full h-auto max-h-[100px] sm:max-h-[120px] object-cover rounded-xl opacity-80"
               />
             </div>
             <div className="space-y-3">
@@ -91,13 +88,22 @@ const About = () => {
           </div>
         </div>
 
-        {/* Passion Card - Wide horizontal */}
         <div className="xl:col-span-3 md:col-span-2">
           <div className="grid-container py-6 px-8">
             <div className="flex md:flex-row flex-col gap-6 items-center">
               <div className="md:w-2/5 w-full flex items-center justify-center">
-                <div className="rounded-2xl w-full h-[180px] flex justify-center items-center bg-gradient-to-br from-violet-500/10 to-cyan-500/10">
-                  <div className="text-7xl">🌍</div>
+                <div className="rounded-2xl w-full h-[180px] sm:h-[200px] flex justify-center items-center bg-black/5 dark:bg-black/20 overflow-hidden">
+                  <Globe
+                    height={180}
+                    width={window.innerWidth < 640 ? Math.min(window.innerWidth - 100, 280) : 280}
+                    backgroundColor="rgba(0, 0, 0, 0)"
+                    backgroundImageOpacity={0.3}
+                    showAtmosphere
+                    showGraticules
+                    globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+                    bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                    labelsData={[{ lat: 28.6139, lng: 77.2090, text: 'Delhi, India', color: '#8b5cf6', size: 1 }]}
+                  />
                 </div>
               </div>
               <div className="md:w-3/5 w-full space-y-3">
@@ -115,11 +121,10 @@ const About = () => {
           </div>
         </div>
 
-        {/* Location/Remote Work Card - Tall vertical */}
         <div className="xl:col-span-1 md:col-span-2">
           <div className="grid-container h-full flex flex-col justify-between">
             <div className="flex-grow flex items-center justify-center mb-5">
-              <img src="assets/grid3.png" alt="grid-3" className="w-full h-[220px] object-contain opacity-80" />
+              <img src="assets/grid3.png" alt="grid-3" className="w-full h-auto max-h-[180px] sm:max-h-[220px] object-contain opacity-80" />
             </div>
             <div className="space-y-3">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white font-generalsans">
