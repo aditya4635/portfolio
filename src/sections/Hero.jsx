@@ -31,8 +31,8 @@ const Hero = () => {
   });
 
   return (
-    <section className="min-h-screen w-full flex flex-col relative" id="home">
-      <div className="w-full h-full absolute inset-0">
+    <section className="h-screen w-full flex flex-col relative" id="home">
+      <div className="w-full h-[150vh] absolute inset-0 z-0 pointer-events-none">
         <Canvas className="w-full h-full">
           <Suspense fallback={<CanvasLoader />}>
             <Leva hidden />
@@ -50,15 +50,15 @@ const Hero = () => {
         </Canvas>
       </div>
 
-      <div className="w-full h-full flex flex-col justify-center items-start c-space gap-6 sm:gap-8 z-10 relative px-5 sm:px-10 pt-40 sm:pt-32 md:pt-0 min-h-screen pointer-events-none">
+      <div className="w-full h-full flex flex-col justify-center items-start c-space gap-6 sm:gap-8 z-10 relative px-5 sm:px-10 pt-40 sm:pt-32 md:pt-0 h-screen pointer-events-none">
         <div className="pointer-events-auto">
           <p className="hero-text text-3xl sm:text-5xl md:text-6xl font-bold !text-black dark:!text-white font-generalsans text-left tracking-tight">
             Hi, I am Aditya
           </p>
           <p className="hero-text text-lg sm:text-xl md:text-2xl text-gray_gradient text-left font-medium mt-2 max-w-xl">
-            I build modern web applications using TypeScript, React, Node.js, Express, PostgreSQL, and Next.js. <br />
-            My focus is on crafting clean, thoughtful frontends and designing backend systems that are scalable, reliable, and easy to maintain. <br />
-            <span className="block mt-4 text-gray-600 dark:text-gray-400">Open to work, freelance and collaborations!</span>
+            I build modern web applications using <span className="font-semibold text-black dark:text-white">TypeScript</span>, <span className="font-semibold text-black dark:text-white">React</span>, <span className="font-semibold text-black dark:text-white">Node.js</span>, <span className="font-semibold text-black dark:text-white">Express</span>, <span className="font-semibold text-black dark:text-white">PostgreSQL</span>, and <span className="font-semibold text-black dark:text-white">Next.js</span>. <br />
+            My focus is on <span className="bg-yellow-300 dark:bg-yellow-400/80 px-1 text-black font-medium">crafting clean</span>, thoughtful frontends and designing backend systems that are <span className="bg-yellow-300 dark:bg-yellow-400/80 px-1 text-black font-medium">scalable</span>, reliable, and easy to maintain. <br />
+            <span className="block mt-4 bg-blue-200 dark:bg-blue-500/30 px-2 py-1 rounded text-gray-800 dark:text-blue-100 w-fit">Open to work, freelance and collaborations!</span>
           </p>
           
           <div className="w-full mt-8">

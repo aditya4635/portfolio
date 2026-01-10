@@ -36,90 +36,73 @@ const About = () => {
 
   return (
     <section className="c-space" id="about">
-      <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 h-full">
-        <div className="xl:col-span-2 md:col-span-2">
-          <div className="grid-container h-full flex flex-col">
-            <div className="w-full min-h-[180px] sm:h-[240px] max-h-[280px] flex items-center justify-center bg-gradient-to-br from-violet-500/5 to-cyan-500/5 rounded-xl mb-5">
-              <img src="assets/photo.png" alt="grid-1" className="w-auto h-full max-h-full object-contain opacity-90" />
-            </div>
-            <div className="space-y-4 flex-grow">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white font-generalsans">
-                Hi, I'm Aditya Raj Bhandari
-              </h2>
-              <p className="text-base text-gray-700 dark:text-white-600 leading-relaxed">
-                Full-stack developer specializing in creating dynamic and responsive websites that deliver exceptional user experiences.
-              </p>
-            </div>
-          </div>
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="head-text">About Me</h2>
+          <p className="text-gray-600 dark:text-white-500 mt-4 text-lg">Get to know me better</p>
         </div>
 
-
-        <div className="xl:col-span-1 md:col-span-1">
-          <div className="grid-container h-full flex flex-col justify-between">
-            <div className="flex-grow flex items-center justify-center mb-4">
-              <img
-                src="assets/grid4.png"
-                alt="grid-4"
-                className="w-full h-auto max-h-[100px] sm:max-h-[120px] object-cover rounded-xl opacity-80"
+        {/* Main Content */}
+        <div className="grid-container">
+          <div className="flex flex-col items-center text-center space-y-8 py-8">
+            {/* Profile Photo */}
+            <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-violet-500/20 shadow-xl shadow-violet-500/10">
+              <img 
+                src="assets/photo.png" 
+                alt="Aditya Raj Bhandari" 
+                className="w-full h-full object-cover"
               />
             </div>
-            <div className="space-y-3">
-              <p className="text-sm font-medium text-gray-700 dark:text-white-600 text-center">Get in touch</p>
-              <div className="flex flex-col items-center gap-2 cursor-pointer group" onClick={handleCopy}>
-                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" className="transition-transform group-hover:scale-110 w-5 h-5" />
-                <p className="text-xs font-medium text-gray-600 dark:text-white group-hover:text-violet-500 transition-colors text-center break-all px-2">
-                  adityarajbhandari1020@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div className="xl:col-span-3 md:col-span-2">
-          <div className="grid-container py-6 px-8">
-            <div className="flex md:flex-row flex-col gap-6 items-center">
-              <div className="md:w-2/5 w-full flex items-center justify-center">
-                <div className="rounded-2xl w-full h-[180px] sm:h-[200px] flex justify-center items-center bg-black/5 dark:bg-black/20 overflow-hidden">
-                  <Globe
-                    height={180}
-                    width={window.innerWidth < 640 ? Math.min(window.innerWidth - 100, 280) : 280}
-                    backgroundColor="rgba(0, 0, 0, 0)"
-                    backgroundImageOpacity={0.3}
-                    showAtmosphere
-                    showGraticules
-                    globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                    bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                    labelsData={[{ lat: 28.6139, lng: 77.2090, text: 'Delhi, India', color: '#8b5cf6', size: 1 }]}
-                  />
-                </div>
-              </div>
-              <div className="md:w-3/5 w-full space-y-3">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white font-generalsans">
-                  Flexible & Remote
-                </h3>
-                <p className="text-base text-gray-700 dark:text-white-600 leading-relaxed">
-                  Based in Delhi, India. Open to remote work opportunities worldwide.
-                </p>
-                <a href="#contact" className="inline-block">
-                  <Button name="Contact Me" isBeam containerClass="mt-2" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="xl:col-span-1 md:col-span-2">
-          <div className="grid-container h-full flex flex-col justify-between">
-            <div className="flex-grow flex items-center justify-center mb-5">
-              <img src="assets/grid3.png" alt="grid-3" className="w-full h-auto max-h-[180px] sm:max-h-[220px] object-contain opacity-80" />
-            </div>
+            {/* Name & Title */}
             <div className="space-y-3">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white font-generalsans">
-                My Passion for Coding
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white font-generalsans">
+                Aditya Raj Bhandari
               </h3>
-              <p className="text-sm text-gray-700 dark:text-white-600 leading-relaxed">
-                I love solving problems and building things through code. Programming isn&apos;t just my profession—it&apos;s my passion.
+              <p className="text-xl md:text-2xl text-violet-500 font-medium">
+                Full-Stack Developer
               </p>
+            </div>
+
+            {/* Description */}
+            <div className="max-w-3xl space-y-4">
+              <p className="text-base md:text-lg text-gray-700 dark:text-white-600 leading-relaxed">
+                I'm a passionate full-stack developer specializing in creating dynamic and responsive web applications 
+                that deliver exceptional user experiences. With expertise in modern technologies like 
+                <span className="font-semibold text-violet-500"> TypeScript</span>,
+                <span className="font-semibold text-violet-500"> React</span>,
+                <span className="font-semibold text-violet-500"> Node.js</span>, and
+                <span className="font-semibold text-violet-500"> Next.js</span>, 
+                I bring ideas to life through clean, scalable code.
+              </p>
+              <p className="text-base md:text-lg text-gray-700 dark:text-white-600 leading-relaxed">
+                Based in <span className="font-semibold">Delhi, India</span>, I'm open to remote work opportunities 
+                and passionate about solving complex problems through innovative solutions.
+              </p>
+            </div>
+
+            {/* Contact Section */}
+            <div className="w-full max-w-md pt-6 border-t border-black-300/20 dark:border-white-800/10">
+              <div className="space-y-4">
+                <p className="text-lg font-semibold text-gray-900 dark:text-white">Let's Connect</p>
+                <div 
+                  className="flex items-center justify-center gap-3 p-4 rounded-xl bg-gradient-to-r from-violet-500/10 to-cyan-500/10 hover:from-violet-500/20 hover:to-cyan-500/20 transition-all cursor-pointer group"
+                  onClick={handleCopy}
+                >
+                  <img 
+                    src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} 
+                    alt="copy" 
+                    className="w-5 h-5 transition-transform group-hover:scale-110" 
+                  />
+                  <p className="text-sm md:text-base font-medium text-gray-700 dark:text-white group-hover:text-violet-500 transition-colors break-all">
+                    adityarajbhandari1020@gmail.com
+                  </p>
+                </div>
+                {hasCopied && (
+                  <p className="text-sm text-green-500 font-medium">✓ Email copied to clipboard!</p>
+                )}
+              </div>
             </div>
           </div>
         </div>
