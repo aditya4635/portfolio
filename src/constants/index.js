@@ -65,7 +65,7 @@ export const myProjects = [
       border: '0.2px solid #36201D',
       boxShadow: '0px 0px 60px 0px #AA3C304D',
     },
-    spotlight: '/assets/spotlight1.png',
+    spotlight: '/assets/Ripple.png',
     tags: [
       {
         id: 1,
@@ -74,16 +74,11 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'javascript',
+        name: 'JavaScript',
         path: '/assets/javascript.png',
       },
       {
-        id: 4,
+        id: 3,
         name: 'Socket.io',
         path: '/assets/socket-io.png',
       },
@@ -102,27 +97,12 @@ export const myProjects = [
       border: '0.2px solid #36201D',
       boxShadow: '0px 0px 60px 0px #AA3C304D',
     },
-    spotlight: '/assets/spotlight1.png',
+    spotlight: '/assets/Sundown.png',
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'javascript',
+        name: 'JavaScript',
         path: '/assets/javascript.png',
-      },
-      {
-        id: 4,
-        name: 'Socket.io',
-        path: '/assets/socket-io.png',
       },
     ],
   }, 
@@ -139,27 +119,12 @@ export const myProjects = [
       border: '0.2px solid #36201D',
       boxShadow: '0px 0px 60px 0px #AA3C304D',
     },
-    spotlight: '/assets/spotlight1.png',
+    spotlight: '/assets/Pdify.png',
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'javascript',
-        path: '/assets/javascript.png',
-      },
-      {
-        id: 4,
-        name: 'Socket.io',
-        path: '/assets/socket-io.png',
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
       },
     ],
   },

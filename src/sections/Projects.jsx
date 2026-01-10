@@ -46,9 +46,6 @@ const Projects = () => {
               <h3 className="text-black dark:text-white text-xl font-semibold group-hover:text-violet-500 transition-colors">
                 {project.title}
               </h3>
-              <p className="text-gray-600 dark:text-white-500 text-sm line-clamp-3">
-                {project.desc}
-              </p>
               
               <div className="flex items-center gap-3 mt-2">
                 {project.tags.map((tag, i) => (
