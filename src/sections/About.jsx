@@ -37,16 +37,16 @@ const About = () => {
   return (
     <section className="c-space" id="about">
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
+        {}
         <div className="text-center mb-12">
           <h2 className="head-text">About Me</h2>
           <p className="text-gray-600 dark:text-white-500 mt-4 text-lg">Get to know me better</p>
         </div>
 
-        {/* Main Content */}
+        {}
         <div className="grid-container">
           <div className="flex flex-col items-center text-center space-y-8 py-8">
-            {/* Profile Photo */}
+            {}
             <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-violet-500/20 shadow-xl shadow-violet-500/10">
               <img 
                 src="assets/photo.png" 
@@ -55,7 +55,7 @@ const About = () => {
               />
             </div>
 
-            {/* Name & Title */}
+            {}
             <div className="space-y-3">
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white font-generalsans">
                 Aditya Raj Bhandari
@@ -65,7 +65,7 @@ const About = () => {
               </p>
             </div>
 
-            {/* Description */}
+            {}
             <div className="max-w-3xl space-y-4">
               <p className="text-base md:text-lg text-gray-700 dark:text-white-600 leading-relaxed">
                 I'm a passionate full-stack developer specializing in creating dynamic and responsive web applications 
@@ -82,7 +82,7 @@ const About = () => {
               </p>
             </div>
 
-            {/* Contact Section */}
+            {}
             <div className="w-full max-w-md pt-6 border-t border-black-300/20 dark:border-white-800/10">
               <div className="space-y-4">
                 <p className="text-lg font-semibold text-gray-900 dark:text-white">Let's Connect</p>

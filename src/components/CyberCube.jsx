@@ -17,7 +17,7 @@ const CyberCube = (props) => {
   return (
     <Float floatIntensity={2} rotationIntensity={1}>
       <group {...props} dispose={null}>
-        {/* Main Cube */}
+        {}
         <mesh
           ref={meshRef}
           onPointerOver={() => setHover(true)}
@@ -36,18 +36,18 @@ const CyberCube = (props) => {
           />
           <Edges
             scale={1}
-            threshold={15} // Display edges only when the angle between two faces exceeds this value (degrees)
+            threshold={15} 
             color={hovered ? "#7c3aed" : "#06b6d4"}
           />
         </mesh>
 
-        {/* Inner Glowing Core */}
+        {}
         <mesh scale={0.5}>
           <octahedronGeometry args={[1, 0]} />
           <meshBasicMaterial color={hovered ? "#06b6d4" : "#7c3aed"} wireframe />
         </mesh>
         
-        {/* Outer Ring */}
+        {}
         <mesh rotation={[Math.PI / 4, Math.PI / 4, 0]}>
            <torusGeometry args={[1.8, 0.02, 16, 100]} />
            <meshBasicMaterial color="#ffffff" />

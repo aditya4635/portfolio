@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
@@ -10,7 +10,7 @@ export default {
       colors: {
         black: {
           DEFAULT: '#000000',
-          100: '#050505', // Deep Void
+          100: '#050505', 
           200: '#0a0a0a',
           300: '#121212',
           500: '#1A1A1A',
@@ -24,10 +24,10 @@ export default {
           500: '#9CA3AF',
         },
         violet: {
-          500: '#7c3aed', // Neon Violet
+          500: '#7c3aed', 
         },
         cyan: {
-          500: '#06b6d4', // Cyan
+          500: '#06b6d4', 
         },
       },
       backgroundImage: {

@@ -11,11 +11,11 @@ const HeroGeometry = (props) => {
   
   useCursor(hovered);
 
-  // Load Earth texture
+  
   const earthTexture = useLoader(THREE.TextureLoader, '/textures/earth-day.jpg');
   
-  // Delhi coordinates: 28.6139° N, 77.2090° E
-  // Convert to 3D position on sphere
+  
+  
   const delhiPosition = useMemo(() => {
     const lat = 28.6139 * (Math.PI / 180);
     const lon = 77.2090 * (Math.PI / 180);
@@ -33,7 +33,7 @@ const HeroGeometry = (props) => {
       groupRef.current.rotation.y += delta * 0.1;
     }
     
-    // Pulsing animation for Delhi marker
+    
     if (markerRef.current) {
       const scale = 1 + Math.sin(state.clock.elapsedTime * 2) * 0.2;
       markerRef.current.scale.set(scale, scale, scale);
@@ -43,7 +43,7 @@ const HeroGeometry = (props) => {
   return (
     <Float floatIntensity={2} rotationIntensity={1}>
       <group ref={groupRef} {...props} dispose={null}>
-        {/* Realistic Earth Globe */}
+        {}
         <mesh 
           ref={earthRef}
           onPointerOver={() => setHover(true)} 
@@ -58,7 +58,7 @@ const HeroGeometry = (props) => {
           />
         </mesh>
 
-        {/* Atmospheric Glow */}
+        {}
         <mesh scale={1.52}>
           <sphereGeometry args={[1.5, 64, 64]} />
           <meshBasicMaterial 
@@ -69,7 +69,7 @@ const HeroGeometry = (props) => {
           />
         </mesh>
 
-        {/* Delhi Location Marker */}
+        {}
         <mesh ref={markerRef} position={delhiPosition}>
           <sphereGeometry args={[0.08, 16, 16]} />
           <meshStandardMaterial 
@@ -79,7 +79,7 @@ const HeroGeometry = (props) => {
           />
         </mesh>
 
-        {/* Marker Pin */}
+        {}
         <mesh position={[delhiPosition[0], delhiPosition[1] + 0.15, delhiPosition[2]]}>
           <cylinderGeometry args={[0.015, 0.015, 0.3, 8]} />
           <meshStandardMaterial 
@@ -89,7 +89,7 @@ const HeroGeometry = (props) => {
           />
         </mesh>
 
-        {/* Outer Wireframe Cage */}
+        {}
         <mesh scale={1.8} rotation={[Math.PI / 4, Math.PI / 4, 0]}>
           <icosahedronGeometry args={[1, 1]} />
           <meshStandardMaterial 
@@ -101,7 +101,7 @@ const HeroGeometry = (props) => {
           />
         </mesh>
 
-        {/* Orbiting Rings */}
+        {}
         <mesh rotation={[Math.PI / 2, 0, 0]}>
           <torusGeometry args={[3.5, 0.05, 16, 100]} />
           <meshStandardMaterial color="#ec4899" emissive="#ec4899" emissiveIntensity={1} />

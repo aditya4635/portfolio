@@ -14,15 +14,15 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
   background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
   @apply text-black;
   font-family: 'General Sans', sans-serif;
-  scroll-padding-top: 7rem; /* Offset for fixed navbar */
+  scroll-padding-top: 7rem; 
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -65,7 +65,7 @@ html.dark, html.dark body {
     @apply bg-gradient-to-r from-violet-500 to-cyan-500 bg-clip-text text-transparent;
   }
 
-  /* button component */
+  
   .btn {
     @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300 hover:bg-black-500 transition-all active:scale-95 text-white mx-auto border border-white-800/10;
   }
@@ -82,12 +82,12 @@ html.dark, html.dark body {
     @apply relative inline-flex rounded-full h-3 w-3 bg-violet-500;
   }
 
-  /* hero section */
+  
   .hero_tag {
     @apply text-center xl:text-6xl md:text-5xl sm:text-4xl text-3xl font-generalsans font-black !leading-normal;
   }
 
-  /* about section */
+  
   .grid-container {
     @apply w-full h-full bg-white/80 dark:bg-black-200/50 backdrop-blur-md rounded-xl p-4 sm:p-6 md:p-7 flex flex-col gap-4 sm:gap-5 hover:border-violet-500/50 transition-colors duration-500 shadow-sm hover:shadow-md border border-transparent;
   }
@@ -104,7 +104,7 @@ html.dark, html.dark body {
     @apply cursor-pointer flex justify-center items-center gap-2;
   }
 
-  /* projects section  */
+  
   .arrow-btn {
     @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full bg-black-100 dark:bg-black-200 hover:bg-black-200 dark:hover:bg-black-300 border border-black-300/20 dark:border-white-800/10;
   }
@@ -113,7 +113,7 @@ html.dark, html.dark body {
     @apply w-10 h-10 rounded-md p-2 bg-neutral-100 dark:bg-black-300 border border-black-300/20 dark:border-white-800/10 flex justify-center items-center;
   }
 
-  /* clients section */
+  
   .client-container {
     @apply grid md:grid-cols-2 grid-cols-1 gap-5 mt-12;
   }
@@ -126,7 +126,7 @@ html.dark, html.dark body {
     @apply flex lg:flex-row flex-col justify-between lg:items-center items-start gap-5 mt-7;
   }
 
-  /*  work experience section */
+  
   .work-container {
     @apply grid lg:grid-cols-3 grid-cols-1 gap-5 mt-12;
   }
@@ -151,7 +151,7 @@ html.dark, html.dark body {
     @apply flex-1 w-0.5 mt-4 h-full bg-neutral-300 dark:bg-black-300 group-hover:bg-violet-500 group-last:hidden;
   }
 
-  /* contact section */
+  
   .contact-container {
     @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
   }
@@ -172,7 +172,7 @@ html.dark, html.dark body {
     @apply w-2.5 h-2.5 object-contain invert brightness-0;
   }
 
-  /*  footer */
+  
   .social-icon {
     @apply w-12 h-12 rounded-full flex justify-center items-center bg-neutral-100 dark:bg-black-300 border border-black-300/20 dark:border-white-800/10 hover:bg-neutral-200 dark:hover:bg-black-500 transition-colors;
   }

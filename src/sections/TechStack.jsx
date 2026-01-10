@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 const technologies = [
-  // Frontend
+  
   { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
   { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
   { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
@@ -10,30 +10,30 @@ const technologies = [
   { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
   { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
   
-  // Backend
+  
   { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
   { name: 'Express', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
   { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
   { name: 'C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
   
-  // Database
+  
   { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
   { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
   { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
   { name: 'Redis', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg' },
   
-  // DevOps & Tools
+  
   { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
   { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
   { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
   { name: 'Postman', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg' },
   { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
   
-  // Cloud & Services
+  
   { name: 'Vercel', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg' },
 ];
 
-// Split technologies into two rows
+
 const row1 = technologies.slice(0, 12);
 const row2 = technologies.slice(12);
 
@@ -77,7 +77,7 @@ const TechStack = () => {
         </p>
       </div>
 
-      {/* Conveyor Belt Styles */}
+      {}
       <style jsx="true">{`
         @keyframes scroll-right {
           0% {
@@ -110,20 +110,20 @@ const TechStack = () => {
         }
       `}</style>
 
-      {/* Row 1 - Scrolling Right */}
+      {}
       <div className="scroll-container scroll-right mb-8" ref={row1Ref}>
         <div className="scroll-content flex">
-          {/* Duplicate items for seamless loop */}
+          {}
           {[...row1, ...row1, ...row1].map((tech, index) => (
             <TechItem key={`row1-${index}`} tech={tech} />
           ))}
         </div>
       </div>
 
-      {/* Row 2 - Scrolling Left */}
+      {}
       <div className="scroll-container scroll-left" ref={row2Ref}>
         <div className="scroll-content flex">
-          {/* Duplicate items for seamless loop */}
+          {}
           {[...row2, ...row2, ...row2].map((tech, index) => (
             <TechItem key={`row2-${index}`} tech={tech} />
           ))}

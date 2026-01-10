@@ -17,13 +17,13 @@ const NavItems = ({ onClick = () => {} }) => (
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true); // Default to true initially, will update in useEffect
+  const [isDarkMode, setIsDarkMode] = useState(true); 
   const headerRef = useRef(null);
   
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
-  // Initialize theme based on user preference or system settings
+  
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
