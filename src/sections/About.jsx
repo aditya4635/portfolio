@@ -53,19 +53,6 @@ const About = () => {
           </div>
         </div>
 
-        <div className="xl:col-span-1 md:col-span-1">
-          <div className="grid-container h-full flex flex-col">
-            <div className="flex-grow flex items-center justify-center mb-4">
-              <img src="assets/grid2.png" alt="grid-2" className="w-full h-auto max-h-[120px] sm:max-h-[160px] object-contain opacity-80" />
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white font-generalsans">Tech Stack</h3>
-              <p className="text-sm text-gray-700 dark:text-white-600 leading-relaxed">
-                Modern frameworks & cutting-edge tools
-              </p>
-            </div>
-          </div>
-        </div>
 
         <div className="xl:col-span-1 md:col-span-1">
           <div className="grid-container h-full flex flex-col justify-between">

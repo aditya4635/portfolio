@@ -55,8 +55,10 @@ const Hero = () => {
           <p className="hero-text text-3xl sm:text-5xl md:text-6xl font-bold !text-black dark:!text-white font-generalsans text-left tracking-tight">
             Hi, I am Aditya
           </p>
-          <p className="hero-text text-lg sm:text-xl md:text-2xl text-gray_gradient text-left font-medium mt-2">
-            Building Products & Brands
+          <p className="hero-text text-lg sm:text-xl md:text-2xl text-gray_gradient text-left font-medium mt-2 max-w-xl">
+            I build modern web applications using TypeScript, React, Node.js, Express, PostgreSQL, and Next.js. <br />
+            My focus is on crafting clean, thoughtful frontends and designing backend systems that are scalable, reliable, and easy to maintain. <br />
+            <span className="block mt-4 text-gray-600 dark:text-gray-400">Open to work, freelance and collaborations!</span>
           </p>
           
           <div className="w-full mt-8">
