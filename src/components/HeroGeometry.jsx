@@ -1,6 +1,6 @@
 import { useRef, useState, useMemo } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
-import { Float, useCursor, Html } from '@react-three/drei';
+import { Float, useCursor } from '@react-three/drei';
 import * as THREE from 'three';
 
 const HeroGeometry = (props) => {

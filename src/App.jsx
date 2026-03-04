@@ -1,25 +1,44 @@
-import Hero from './sections/Hero.jsx';
-import About from './sections/About.jsx';
-import Footer from './sections/Footer.jsx';
+import { Suspense, lazy } from 'react';
 import Navbar from './sections/Navbar.jsx';
-import Contact from './sections/Contact.jsx';
-import TechStack from './sections/TechStack.jsx';
+import Footer from './sections/Footer.jsx';
 
+
+import About from './sections/About.jsx';
 import Projects from './sections/Projects.jsx';
 
+
+const Hero = lazy(() => import('./sections/Hero.jsx'));
+const TechStack = lazy(() => import('./sections/TechStack.jsx'));
+const Contact = lazy(() => import('./sections/Contact.jsx'));
+
+
+const SectionLoader = () => (
+  <div className="flex items-center justify-center min-h-[50vh]">
+    <div className="w-12 h-12 border-4 border-violet-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 const App = () => {
   return (
     <main className="w-full relative px-0">
       <Navbar />
-      <Hero />
+      
+      <Suspense fallback={<SectionLoader />}>
+        <Hero />
+      </Suspense>
       
       <Projects />
       
       <div className="space-y-20 sm:space-y-32 pb-12 sm:pb-20 mt-20 sm:mt-32">
-        <TechStack />
+        <Suspense fallback={<SectionLoader />}>
+          <TechStack />
+        </Suspense>
+        
         <About />
-        <Contact />
+        
+        <Suspense fallback={<SectionLoader />}>
+          <Contact />
+        </Suspense>
       </div>
       
       <Footer />

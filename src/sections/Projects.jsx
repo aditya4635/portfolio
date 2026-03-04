@@ -1,44 +1,28 @@
-import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Center, OrbitControls } from '@react-three/drei';
-
 import { myProjects } from '../constants/index.js';
-import CanvasLoader from '../components/Loading.jsx';
-import CyberCube from '../components/CyberCube.jsx';
+import ProjectsCanvas from '../components/ProjectsCanvas.jsx';
 
 const Projects = () => {
   return (
     <section className="c-space" id="work">
-      <div className="flex justify-between items-center mb-12">
-        <p className="head-text">My Selected Work</p>
-        <div className="h-20 w-20 hidden sm:block">
-             <Canvas>
-                <ambientLight intensity={1} />
-                <directionalLight position={[10, 10, 5]} />
-                <Center>
-                  <Suspense fallback={<CanvasLoader />}>
-                    <CyberCube scale={1.5} />
-                  </Suspense>
-                </Center>
-                <OrbitControls enableZoom={false} enablePan={false} />
-              </Canvas>
-        </div>
+      <div className="flex justify-between items-center mb-8 md:mb-12">
+        <h2 className="head-text">My Selected Work</h2>
+        <ProjectsCanvas />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full">
         {myProjects.map((project, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="bg-white/90 dark:bg-black-200/50 backdrop-blur-xl rounded-2xl border border-gray-300/50 dark:border-white-800/10 p-5 shadow-lg hover:shadow-xl hover:shadow-violet-500/20 transition-all duration-300 group flex flex-col justify-between"
           >
             <div className="relative w-full aspect-[16/9] overflow-hidden rounded-xl mb-5">
-              <img 
-                src={project.spotlight} 
-                alt={project.title} 
-                className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" 
+              <img
+                src={project.spotlight}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
               />
               <div className="absolute top-2 right-2 p-2 bg-black/50 backdrop-blur-md rounded-lg border border-white/10">
-                 <img src={project.logo} alt="logo" className="w-6 h-6" />
+                <img src={project.logo} alt="logo" className="w-6 h-6" />
               </div>
             </div>
 
@@ -46,7 +30,10 @@ const Projects = () => {
               <h3 className="text-black dark:text-white text-xl font-semibold group-hover:text-violet-500 transition-colors">
                 {project.title}
               </h3>
-              
+              <p className="text-sm md:text-base text-gray-600 dark:text-white-600 leading-relaxed line-clamp-3">
+                {project.desc}
+              </p>
+
               <div className="flex items-center gap-3 mt-2">
                 {project.tags.map((tag, i) => (
                   <div key={i} className="w-8 h-8 rounded-md p-1.5 bg-neutral-100 dark:bg-black-300 border border-black-300/20 dark:border-white-800/10 flex justify-center items-center" title={tag.name}>

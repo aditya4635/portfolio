@@ -1,0 +1,30 @@
+.scroll-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scroll-content {
+  display: flex;
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.scroll-container:hover .scroll-content {
+  animation-play-state: paused;
+}
+
+.scroll-right .scroll-content {
+  animation: scroll-right 30s linear infinite;
+}
+
+.scroll-left .scroll-content {
+  animation: scroll-left 30s linear infinite;
+}

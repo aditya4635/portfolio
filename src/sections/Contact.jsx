@@ -1,11 +1,12 @@
-import emailjs from '@emailjs/browser';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import useAlert from '../hooks/useAlert.js';
+import useContactForm from '../hooks/useContactForm.js';
 import Alert from '../components/Alert.jsx';
+import FormField from '../components/FormField.jsx';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,77 +14,7 @@ const Contact = () => {
   const formRef = useRef();
 
   const { alert, showAlert, hideAlert } = useAlert();
-  const [loading, setLoading] = useState(false);
-
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-
-  const handleChange = ({ target: { name, value } }) => {
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey) {
-      console.error('EmailJS Environment Variables are missing!');
-      console.log('Service ID:', serviceId);
-      console.log('Template ID:', templateId);
-      console.log('Public Key:', publicKey);
-      
-      showAlert({
-        show: true,
-        text: 'Configuration Error: Missing EmailJS keys.',
-        type: 'danger',
-      });
-      setLoading(false);
-      return;
-    }
-
-    try {
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: form.name,
-          to_name: 'Aditya Bhandari',
-          from_email: form.email,
-          to_email: 'adityarajbhandari1020@gmail.com',
-          message: form.message,
-        },
-        publicKey
-      );
-
-      setLoading(false);
-      showAlert({
-        show: true,
-        text: 'Thank you for your message!',
-        type: 'success',
-      });
-
-      setTimeout(() => {
-        hideAlert(false);
-        setForm({
-          name: '',
-          email: '',
-          message: '',
-        });
-      }, 3000);
-    } catch (error) {
-      setLoading(false);
-      console.error('EmailJS Error:', error);
-
-      showAlert({
-        show: true,
-        text: "I didn't receive your message. Please try again.",
-        type: 'danger',
-      });
-    }
-  };
+  const { form, loading, handleChange, handleSubmit } = useContactForm(showAlert, hideAlert);
 
   useGSAP(() => {
     gsap.from('.contact-container', {
@@ -102,57 +33,45 @@ const Contact = () => {
     <section className="c-space" id="contact">
       {alert.show && <Alert {...alert} />}
 
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
-        <div className="contact-container pt-8 sm:pt-10 pb-8 sm:pb-10 px-5 sm:px-8 bg-white/90 dark:bg-black-200/50 backdrop-blur-xl border border-gray-300/50 dark:border-white-800/10 rounded-2xl shadow-xl shadow-gray-300/50 dark:shadow-black-200 w-full max-w-xl">
+      <div className="relative min-h-screen flex items-center justify-center flex-col py-12">
+        <div className="contact-container w-full max-w-xl md:max-w-2xl pt-8 sm:pt-10 pb-8 sm:pb-10 px-5 sm:px-8 md:px-10 bg-white/90 dark:bg-black-200/50 backdrop-blur-xl border border-gray-300/50 dark:border-white-800/10 rounded-2xl shadow-xl shadow-gray-300/50 dark:shadow-black-200">
           <h3 className="head-text">Let&apos;s talk</h3>
           <p className="text-base sm:text-lg text-gray-600 dark:text-white-600 mt-3">
-            Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
-            life, I’m here to help.
+            Whether you&apos;re looking to build a new website, improve your existing platform, or bring a unique project to
+            life, I&apos;m here to help.
           </p>
 
-          <form ref={formRef} onSubmit={handleSubmit} className="mt-8 sm:mt-12 flex flex-col space-y-6 sm:space-y-7">
-            <label className="space-y-3">
-              <span className="field-label">Full Name</span>
-              <input
-                type="text"
+          <form ref={formRef} onSubmit={handleSubmit} className="mt-8 sm:mt-10 flex flex-col space-y-5 sm:space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+              <FormField
+                label="Full Name"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                required
-                className="field-input"
                 placeholder="ex., Your Name"
               />
-            </label>
 
-            <label className="space-y-3">
-              <span className="field-label">Email address</span>
-              <input
+              <FormField
+                label="Email address"
                 type="email"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                required
-                className="field-input"
                 placeholder="ex., youremail@gmail.com"
               />
-            </label>
+            </div>
 
-            <label className="space-y-3">
-              <span className="field-label">Your message</span>
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="field-input"
-                placeholder="Hi, I'm interested in..."
-              />
-            </label>
+            <FormField
+              label="Your message"
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              placeholder="Hi, I'm interested in..."
+              isTextArea
+            />
 
             <button className="field-btn" type="submit" disabled={loading}>
               {loading ? 'Sending...' : 'Send Message'}
-
               <img src="/assets/arrow-up.png" alt="arrow-up" className="field-btn_arrow invert" />
             </button>
           </form>
