@@ -22,6 +22,7 @@ export const myProjects = [
     desc: 'Ripple is a real-time chat application with multiple theme support, built for seamless communication.',
     subdesc: 'Built with Vite, Tailwind CSS, JavaScript and Socket.io — optimised for performance and scalability.',
     href: 'https://test-k1dd.onrender.com',
+    github: 'https://github.com/aditya4635/Ripple',
     logo: '/assets/ripple.jpg',
     spotlight: '/assets/Ripple.png',
     tags: [
@@ -35,6 +36,7 @@ export const myProjects = [
     desc: 'A pixel-perfect recreation of the award-winning Sundown Studio site, pushing the limits of CSS and vanilla JavaScript.',
     subdesc: 'Focused on advanced scroll-based animations and smooth transitions using pure HTML, CSS, and JavaScript.',
     href: 'https://sundown-main-alpha.vercel.app',
+    github: 'https://github.com/aditya4635/sundown-main',
     logo: '/assets/sundown-studio.png',
     spotlight: '/assets/Sundown.png',
     tags: [
@@ -45,7 +47,8 @@ export const myProjects = [
     title: 'Pdify',
     desc: 'Pdify is an AI-powered SaaS platform that generates beautiful, concise summaries from your PDF documents.',
     subdesc: 'Built with Next.js, Tailwind CSS, TypeScript, and Zustand for optimal performance and scalability.',
-    href: 'https://github.com/aditya4635/Ripple',
+    href: 'https://pdf-summary-six.vercel.app',
+    github: 'https://github.com/aditya4635/Pdify',
     logo: '/assets/project-logo1.png',
     spotlight: '/assets/Pdify.png',
     tags: [
