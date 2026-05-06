@@ -72,7 +72,7 @@ const Navbar = () => {
             </a>
 
             <a
-              href="/assets/NSUT_TnP_Resume (5).pdf"
+              href="/assets/tech_resume.pdf"
               download="Aditya_Raj_Bhandari_Resume.pdf"
               className="flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm text-white bg-accent hover:bg-accent-dark transition-all shadow-md"
             >
@@ -86,7 +86,7 @@ const Navbar = () => {
           {/* sm-only Resume (tablet, no GitHub/LeetCode) */}
           <div className="hidden sm:flex md:hidden items-center gap-2 pr-4">
             <a
-              href="/assets/NSUT_TnP_Resume (5).pdf"
+              href="/assets/tech_resume.pdf"
               download="Aditya_Raj_Bhandari_Resume.pdf"
               className="flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm text-white bg-accent hover:bg-accent-dark transition-all shadow-md"
             >
@@ -138,7 +138,7 @@ const Navbar = () => {
           {/* Resume inside drawer on mobile only */}
           <div className="sm:hidden mt-4 pt-4 border-t border-black-300/20 dark:border-white-800/10">
             <a
-              href="/assets/NSUT_TnP_Resume (5).pdf"
+              href="/assets/tech_resume.pdf"
               download="Aditya_Raj_Bhandari_Resume.pdf"
               className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg font-medium text-sm text-white bg-accent hover:bg-accent-dark transition-all"
             >
