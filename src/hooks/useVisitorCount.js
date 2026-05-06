@@ -5,11 +5,18 @@ export const useVisitorCount = (storageKey = 'portfolioVisitorCount') => {
 
   useEffect(() => {
     const storedCount = localStorage.getItem(storageKey);
-    const count = storedCount ? parseInt(storedCount, 10) : 0;
+    let count = storedCount ? parseInt(storedCount, 10) : 0;
     
-    const newCount = count + 1;
-    localStorage.setItem(storageKey, newCount.toString());
-    setVisitorCount(newCount);
+    // Check if the user has already been counted during this current browser session
+    const hasVisitedThisSession = sessionStorage.getItem('hasVisitedThisSession');
+
+    if (!hasVisitedThisSession) {
+      count += 1;
+      localStorage.setItem(storageKey, count.toString());
+      sessionStorage.setItem('hasVisitedThisSession', 'true');
+    }
+    
+    setVisitorCount(count);
   }, [storageKey]);
 
   return visitorCount;
