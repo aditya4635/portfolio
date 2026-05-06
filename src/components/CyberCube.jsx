@@ -36,14 +36,14 @@ const CyberCube = (props) => {
           <Edges
             scale={1}
             threshold={15} 
-            color={hovered ? "#7c3aed" : "#06b6d4"}
+            color={hovered ? "#10b981" : "#888888"}
           />
         </mesh>
 
         {}
         <mesh scale={0.5}>
           <octahedronGeometry args={[1, 0]} />
-          <meshBasicMaterial color={hovered ? "#06b6d4" : "#7c3aed"} wireframe />
+          <meshBasicMaterial color={hovered ? "#10b981" : "#6b7280"} wireframe />
         </mesh>
         
         {}

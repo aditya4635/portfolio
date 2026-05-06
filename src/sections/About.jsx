@@ -36,10 +36,13 @@ const About = () => {
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 py-6 md:py-8">
 
             <div className="flex-shrink-0">
-              <div className="w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-violet-500/20 shadow-xl shadow-violet-500/10">
+              <div className="w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-accent/20 shadow-xl shadow-accent/10">
                 <img
                   src="assets/photo.png"
                   alt="Aditya Raj Bhandari"
+                  loading="lazy"
+                  width="240"
+                  height="240"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -50,7 +53,7 @@ const About = () => {
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white font-generalsans">
                   Aditya Raj Bhandari
                 </h3>
-                <p className="text-lg md:text-xl text-violet-500 font-medium">
+                <p className="text-lg md:text-xl text-accent font-medium">
                   Full-Stack Developer
                 </p>
               </div>
@@ -59,10 +62,10 @@ const About = () => {
                 <p className="text-sm md:text-base lg:text-lg text-gray-700 dark:text-white-600 leading-relaxed">
                   I&apos;m a passionate full-stack developer specializing in creating dynamic and responsive web applications
                   that deliver exceptional user experiences. With expertise in modern technologies like
-                  <span className="font-semibold text-violet-500"> TypeScript</span>,
-                  <span className="font-semibold text-violet-500"> React</span>,
-                  <span className="font-semibold text-violet-500"> Node.js</span>, and
-                  <span className="font-semibold text-violet-500"> Next.js</span>,
+                  <span className="font-semibold text-accent"> TypeScript</span>,
+                  <span className="font-semibold text-accent"> React</span>,
+                  <span className="font-semibold text-accent"> Node.js</span>, and
+                  <span className="font-semibold text-accent"> Next.js</span>,
                   I bring ideas to life through clean, scalable code.
                 </p>
                 <p className="text-sm md:text-base lg:text-lg text-gray-700 dark:text-white-600 leading-relaxed">
@@ -75,7 +78,7 @@ const About = () => {
                 <div className="space-y-3">
                   <p className="text-base font-semibold text-gray-900 dark:text-white">Let&apos;s Connect</p>
                   <div
-                    className="flex items-center justify-center md:justify-start gap-3 p-3 md:p-4 rounded-xl bg-gradient-to-r from-violet-500/10 to-cyan-500/10 hover:from-violet-500/20 hover:to-cyan-500/20 transition-all cursor-pointer group"
+                    className="flex items-center justify-center md:justify-start gap-3 p-3 md:p-4 rounded-xl bg-neutral-100 dark:bg-black-300/60 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all cursor-pointer group border border-black-300/20 dark:border-white-800/10"
                     onClick={() => handleCopy(email)}
                   >
                     <img
@@ -83,7 +86,7 @@ const About = () => {
                       alt="copy"
                       className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:scale-110 flex-shrink-0"
                     />
-                    <p className="text-xs md:text-sm font-medium text-gray-700 dark:text-white group-hover:text-violet-500 transition-colors break-all">
+                    <p className="text-xs md:text-sm font-medium text-gray-700 dark:text-white group-hover:text-accent transition-colors break-all">
                       {email}
                     </p>
                   </div>
