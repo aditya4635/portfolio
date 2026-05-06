@@ -3,6 +3,7 @@ import { useFrame, useLoader } from '@react-three/fiber';
 import { Float, useCursor } from '@react-three/drei';
 import * as THREE from 'three';
 
+
 const HeroGeometry = (props) => {
   const groupRef = useRef();
   const earthRef = useRef();
@@ -48,7 +49,7 @@ const HeroGeometry = (props) => {
           ref={earthRef}
           onPointerOver={() => setHover(true)} 
           onPointerOut={() => setHover(false)}
-          scale={hovered ? 1.05 : 1}
+          scale={1}
         >
           <sphereGeometry args={[1.5, 64, 64]} />
           <meshStandardMaterial 
@@ -58,63 +59,32 @@ const HeroGeometry = (props) => {
           />
         </mesh>
 
-        {}
-        <mesh scale={1.52}>
-          <sphereGeometry args={[1.5, 64, 64]} />
-          <meshBasicMaterial 
-            color="#4da6ff"
-            transparent
-            opacity={0.15}
-            side={THREE.BackSide}
-          />
-        </mesh>
 
-        {}
+
+        {/* Delhi location marker — emerald */}
         <mesh ref={markerRef} position={delhiPosition}>
           <sphereGeometry args={[0.08, 16, 16]} />
           <meshStandardMaterial 
-            color="#8b5cf6"
-            emissive="#8b5cf6"
+            color="#10b981"
+            emissive="#10b981"
             emissiveIntensity={2}
           />
         </mesh>
 
-        {}
+        {/* Marker stem — emerald */}
         <mesh position={[delhiPosition[0], delhiPosition[1] + 0.15, delhiPosition[2]]}>
           <cylinderGeometry args={[0.015, 0.015, 0.3, 8]} />
           <meshStandardMaterial 
-            color="#8b5cf6"
-            emissive="#8b5cf6"
+            color="#10b981"
+            emissive="#10b981"
             emissiveIntensity={1.5}
           />
         </mesh>
 
-        {}
-        <mesh scale={1.8} rotation={[Math.PI / 4, Math.PI / 4, 0]}>
-          <icosahedronGeometry args={[1, 1]} />
-          <meshStandardMaterial 
-            color="#06b6d4" 
-            wireframe 
-            transparent 
-            opacity={0.3} 
-            side={THREE.DoubleSide}
-          />
-        </mesh>
-
-        {}
+        {/* Orbit ring — hairline, near-transparent */}
         <mesh rotation={[Math.PI / 2, 0, 0]}>
-          <torusGeometry args={[3.5, 0.05, 16, 100]} />
-          <meshStandardMaterial color="#ec4899" emissive="#ec4899" emissiveIntensity={1} />
-        </mesh>
-        
-        <mesh rotation={[Math.PI / 3, Math.PI / 6, 0]}>
-          <torusGeometry args={[4, 0.05, 16, 100]} />
-          <meshStandardMaterial color="#7c3aed" emissive="#7c3aed" emissiveIntensity={1} />
-        </mesh>
-
-        <mesh rotation={[-Math.PI / 3, -Math.PI / 6, 0]}>
-          <torusGeometry args={[4.5, 0.05, 16, 100]} />
-          <meshStandardMaterial color="#06b6d4" emissive="#06b6d4" emissiveIntensity={1} />
+          <torusGeometry args={[3.5, 0.015, 16, 100]} />
+          <meshStandardMaterial color="#888888" transparent opacity={0.18} />
         </mesh>
       </group>
     </Float>

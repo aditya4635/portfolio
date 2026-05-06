@@ -10,24 +10,25 @@ export default {
       colors: {
         black: {
           DEFAULT: '#000000',
-          100: '#050505', 
+          100: '#050505',
           200: '#0a0a0a',
-          300: '#121212',
-          500: '#1A1A1A',
-          600: '#2A2A2A',
+          300: '#111111',
+          500: '#1a1a1a',
+          600: '#272727',
         },
         white: {
           DEFAULT: '#FFFFFF',
-          800: '#F3F4F6',
-          700: '#E5E7EB',
-          600: '#D1D5DB',
-          500: '#9CA3AF',
+          800: '#F5F5F5',
+          700: '#E5E5E5',
+          600: '#C4C4C4',
+          500: '#9A9A9A',
         },
-        violet: {
-          500: '#7c3aed', 
-        },
-        cyan: {
-          500: '#06b6d4', 
+        // Professional accent: emerald — trustworthy, dev-native (think GitHub, Linear)
+        accent: {
+          DEFAULT: '#10b981', // emerald-500
+          light: '#34d399',   // emerald-400
+          dark: '#059669',    // emerald-600
+          muted: '#d1fae5',   // emerald-100
         },
       },
       backgroundImage: {
@@ -35,7 +36,7 @@ export default {
       },
       animation: {
         'spin-slow': 'spin 10s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
+        float: 'float 6s ease-in-out infinite',
       },
       keyframes: {
         float: {
